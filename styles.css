@@ -1,0 +1,417 @@
+:root {
+  --primary: #2A2A2A;
+  --accent: #8A2BE2;
+  --highlight: #FFD700;
+  --text: #333;
+  --redacted: #B71C1C;
+  --border: #E0E0E0;
+}
+
+body {
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Breaking News Banner */
+.breaking-news {
+  background: var(--redacted);
+  color: white;
+  padding: 0.5rem 0;
+  border-bottom: 3px solid var(--highlight);
+}
+
+.breaking-badge {
+  background: var(--highlight);
+  color: var(--primary);
+  padding: 0.3rem 0.8rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+/* News Article Styling */
+.news-article {
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.article-header {
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.headline {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  color: var(--primary);
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.reporter-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.dateline {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Investigative Elements */
+.redacted-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.redacted {
+  background: repeating-linear-gradient(
+      45deg,
+      #fff,
+      #fff 10px,
+      #ffe0e0 10px,
+      #ffe0e0 20px
+  );
+  color: transparent;
+  padding: 0.2rem 0.5rem;
+  cursor: help;
+}
+
+.code-leak {
+  background: #f8f9fa;
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.leak-source {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+/* Interactive Components */
+.interactive-box {
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.price-ticker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.crypto-symbol {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.change {
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+.change.positive {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.disclaimer {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.featured-image {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.featured-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.inspection-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.inspection-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.steps {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.step-number {
+  background: var(--accent);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.reveal-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: var(--redacted);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.reveal-btn:hover {
+  transform: scale(1.05);
+}
+
+.hidden-layer {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  z-index: 1001;
+  max-width: 500px;
+}
+
+.blockchain-animation {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.block {
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  animation: blockPulse 1.5s infinite;
+}
+
+@keyframes blockPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Verification Section */
+.verification-protocol {
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.verify-button {
+    background: #1DA1F2;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.verify-button:hover {
+    background: #1991db;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(29, 161, 242, 0.3);
+}
+
+.verification-steps {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    z-index: 1002;
+    max-width: 500px;
+    width: 90%; }
+
+    /* Verification Overlay */
+.verification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.verification-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+}
+
+.verification-steps {
+    margin-top: 1.5rem;
+}
+
+.frop-image-reveal {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.frop-image-reveal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.verify-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #1DA1F2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.verify-btn:hover {
+    background: #1991db;
+    transform: translateY(-2px);
+}
+
+/* Add to existing step styles */
+.step kbd {
+    background: #e0e0e0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+}
+.verification-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  padding: 1rem; /* Reduce padding */
+}
+
+.verification-content {
+  background: white;
+  padding: 1rem; /* Reduce padding */
+  border-radius: 8px;
+  max-width: 450px; /* Make it smaller */
+  width: 90%;
+  position: relative;
+  font-size: 0.9rem; /* Reduce text size */
+}
+
+.verification-steps {
+  max-height: 60vh; /* Limit max height */
+  overflow-y: auto; /* Enable scrolling if needed */
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem; /* Reduce step padding */
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 0.85rem; /* Reduce text size */
+}
+
+.step-number {
+  width: 25px; /* Smaller circle */
+  height: 25px;
+  font-size: 0.8rem;
+}
+
+.frop-image-reveal img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
